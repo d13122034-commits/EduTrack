@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+   background-color: E0FFFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container-fluid{
+    
+}
+.navbar{
+   background-color: 004953; 
+}
+
+.card {
+    border-radius: 12px; /* حواف دائرية ناعمة */
+}
+
+.table thead {
+    background-color: #004d56 !important;
+    color: white;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #004d56;
+    box-shadow: 0 0 0 0.25rem rgba(0, 77, 86, 0.25);
+}
