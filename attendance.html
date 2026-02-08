@@ -19,17 +19,21 @@
     <div class="card shadow-sm border-0 mb-4">
         <div class="card-body p-4">
             <div class="row g-3 align-items-end">
+                <div class="col-md-4">
+        <select id="groupFilterAttendance" class="form-select" onchange="updateStudentsForAttendance()">
+            <option selected disabled>Choose Group...</option>
+        </select>
+    </div>
                 <div class="col-md-6">
                     <label class="form-label small fw-bold" style="color: #004d56;">Select Student</label>
-                    <select id="attendanceSelect" class="form-select">
+                    <select id="attendanceStudentSelect" class="form-select">
                         <option selected disabled>Choose Student...</option>
                         </select>
                 </div>
-                <div class="col-md-6">
-                    <button class="btn btn-primary w-100 fw-bold shadow-sm" onclick="markAttendance()" style="background-color: #004d56; border: none;">
-                        <i class="bi bi-calendar-check me-1"></i> Mark as Present
-                    </button>
-                </div>
+               <div class="col-md-4">
+        <button class="btn btn-primary w-100" onclick="markAttendance('Present')">Mark as Present</button>
+        <button class="btn btn-danger w-100 mt-1" onclick="markAttendance('Absent')">Mark as Absent</button>
+    </div>
             </div>
         </div>
     </div>
@@ -38,8 +42,12 @@
         <div class="card-header bg-white fw-bold py-3" style="color: #004d56;">
             <i class="bi bi-people-fill me-2"></i> Attendance Record
         </div>
-        <ul id="attendanceList" class="list-group list-group-flush">
-            </ul>
+       <div class="table-responsive">
+        <table class="table mb-0">
+            <tbody id="attendanceTableBody">
+                </tbody>
+        </table>
+    </div>
     </div>
 
     <div class="mt-4">

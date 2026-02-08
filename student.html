@@ -12,36 +12,44 @@
         <h2 class="fw-bold text-uppercase" style="color: #004d56; letter-spacing: 2px;">Student Management</h2>
         <div class="mx-auto" style="width: 180px; height: 4px; background-color: #004d56; border-radius: 2px;"></div>
     </div>
-
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card shadow-sm border-0 mb-4">
-                <div class="card-body p-4">
-                    <label class="form-label fw-bold">Add New Student</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-white"><i class="bi bi-person"></i></span>
-                        <input type="text" id="studentName" class="form-control" placeholder="Enter student name">
-                        <button class="btn btn-primary px-4" onclick="addStudent()" style="background-color: #004d56; border: none;">
-                            <i class="bi bi-plus-lg"></i> Add
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card shadow-sm border-0">
-                <div class="card-header bg-white fw-bold py-3">
-                    <i class="bi bi-list-ul me-2"></i> Student List
-                </div>
-                <ul id="studentList" class="list-group list-group-flush">
-                    </ul>
-            </div>
-
-            <div class="mt-4">
-                <a href="index.html" class="text-decoration-none text-muted">
-                    <i class="bi bi-arrow-left-circle-fill me-1"></i> Back to Dashboard
-                </a>
+               <div class="card-body p-4">
+    <label class="form-label fw-bold">Add New Student & Group</label>
+    <div class="row g-2">
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-text bg-white"><i class="bi bi-person"></i></span>
+                <input type="text" id="studentName" class="form-control" placeholder="Student Name">
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-text bg-white"><i class="bi bi-people"></i></span>
+                <input type="text" id="groupName" class="form-control" placeholder="Group (e.g. Group A)">
+            </div>
+        </div>
+        <div class="col-12 mt-3">
+            <button class="btn btn-primary w-100 py-2" onclick="addStudent()" style="background-color: #004d56; border: none;">
+                <i class="bi bi-plus-lg"></i> Add to Records
+            </button>
+        </div>
+        <div class="card shadow-sm border-0 mt-4">
+    <div class="card-header bg-white fw-bold py-3 text-start">
+        <i class="bi bi-list-ul me-2"></i> Registered Students
+    </div>
+    <ul id="studentList" class="list-group list-group-flush">
+        </ul>
+</div>
+    </div>
+</div>
+        </div>
+    </div>
+     <div class="mt-4">
+        <a href="index.html" class="text-decoration-none text-muted">
+            <i class="bi bi-arrow-left-circle-fill me-1"></i> Back to Dashboard
+        </a>
     </div>
 </div>
 
