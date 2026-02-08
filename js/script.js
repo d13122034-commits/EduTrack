@@ -264,14 +264,20 @@ function displayAttendanceTable() {
     if (!tableBody) return;
 
     const records = JSON.parse(localStorage.getItem("attendanceRecords")) || [];
-    tableBody.innerHTML = records.reverse().map(r => `
+    
+    tableBody.innerHTML = records.map((r, index) => `
         <tr>
             <td>${r.name}</td>
             <td><span class="badge ${r.status === 'Present' ? 'bg-success' : 'bg-danger'}">${r.status}</span></td>
             <td>${r.date}</td>
             <td>${r.time}</td>
+            <td class="text-end">
+                <button class="btn btn-sm text-danger" onclick="deleteAttendance(${index})">
+                    <i class="bi bi-trash"></i> حذف
+                </button>
+            </td>
         </tr>
-    `).join('');
+    `).reverse().join(''); 
 }
 
 
@@ -279,3 +285,21 @@ document.addEventListener("DOMContentLoaded", () => {
     fillAttendanceGroups();
     displayAttendanceTable(); 
 });
+
+window.deleteAttendance = function(index) {
+   
+    let records = JSON.parse(localStorage.getItem("attendanceRecords")) || [];
+
+   
+    if (confirm("هل أنت متأكد من حذف هذا السجل؟")) {
+        
+       
+        records.splice(index, 1);
+
+    
+        localStorage.setItem("attendanceRecords", JSON.stringify(records));
+
+       
+        displayAttendanceTable();
+    }
+};
