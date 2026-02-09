@@ -13,29 +13,41 @@
         <h2 class="fw-bold" style="color: #004d56;">📊 Students Grades</h2>
     </div>
 
-    <div class="card shadow-sm border-0 mb-4">
-      <div class="card-body p-4">
-    <div class="row g-2 align-items-center"> 
-        <div class="col-md-2">
-        <select id="groupFilter" class="form-select" onchange="updateStudentsByGroup()">
-            <option selected disabled>Choose Group</option>
-        </select>
-    </div>
+    <div class="card-body p-4">
+    <div class="row g-2 mb-3 align-items-end">
         <div class="col-md-3">
+            <label class="form-label small fw-bold">Group</label>
+            <select id="groupFilter" class="form-select" onchange="updateStudentsByGroup()">
+                <option selected disabled>Choose Group</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <label class="form-label small fw-bold">Student Name</label>
             <select id="studentSelect" class="form-select">
                 <option selected disabled>Select Student</option>
             </select>
         </div>
+        <div class="col-md-5">
+            <label class="form-label small fw-bold">Exam Title (e.g., Quiz 1 / Midterm)</label>
+            <input type="text" id="exam" class="form-control" placeholder="Enter Exam Name">
+        </div>
+    </div>
+
+    <div class="row g-2 align-items-end">
         <div class="col-md-2">
-            <input type="number" id="exam" class="form-control" placeholder="Exam">
+            <label class="form-label small fw-bold">Exam Grade</label>
+            <input type="number" id="examGradeValue" class="form-control" placeholder="Score">
         </div>
         <div class="col-md-2">
-            <input type="number" id="homework" class="form-control" placeholder="Homework">
+            <label class="form-label small fw-bold">Homework</label>
+            <input type="number" id="homework" class="form-control" placeholder="Grade">
         </div>
         <div class="col-md-2">
-            <input type="number" id="participationCount" class="form-control" placeholder="Participation" min="0">
+            <label class="form-label small fw-bold">Participation</label>
+            <input type="number" id="participationCount" class="form-control" placeholder="Points" min="0">
         </div>
         <div class="col-md-2">
+            <label class="form-label small fw-bold">Performance</label>
             <select id="performance" class="form-select">
                 <option selected disabled>Note...</option>
                 <option value="Excellent ⭐">Excellent ⭐</option>
@@ -43,15 +55,18 @@
                 <option value="Needs Support ⚠️">Needs Support ⚠️</option>
             </select>
         </div>
-        <div class="col-md-2">
-        <input type="text" id="manualNote" class="form-control" placeholder="Analytical Thinking">
-    </div>
+        <div class="col-md-3">
+            <label class="form-label small fw-bold">Analytical Thinking</label>
+            <input type="text" id="manualNote" class="form-control" placeholder="Your observations...">
+        </div>
         <div class="col-md-1">
             <button class="btn btn-success w-100" onclick="addGrade()">Save</button>
         </div>
     </div>
 </div>
-    </div>
+
+
+
 
     <div class="card shadow-sm border-0">
         <div class="table-responsive">
@@ -59,7 +74,8 @@
                 <thead class="table-dark" style="background-color: #004d56;">
                     <tr>
                         <th>Student Name</th>
-                        <th>Exam</th>
+                         <th>Exam Name</th>
+                        <th>Exam grade</th>
                         <th>Homework</th>
                         <th>Total</th>
                         <th>Participation</th>
